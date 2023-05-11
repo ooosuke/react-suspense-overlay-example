@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Suspense } from "react";
 
 type Props = {
@@ -6,16 +7,5 @@ type Props = {
 };
 
 export function SuspenseOverlay({ children, fallback }: Props) {
-  return (
-    <Suspense
-      fallback={
-        <>
-          {children}
-          {fallback}
-        </>
-      }
-    >
-      {children}
-    </Suspense>
-  );
+  return <Suspense fallback={fallback}>{children}</Suspense>;
 }
